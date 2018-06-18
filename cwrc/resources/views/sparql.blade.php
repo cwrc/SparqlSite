@@ -42,6 +42,6 @@
 
     <script>
 
-        var yasgui = YASGUI(document.getElementById("yasgui"));
+        var yasgui = YASGUI(document.getElementById("yasgui"), {endpoint: "{{ $endpoint }}"});
     </script>
 </html>

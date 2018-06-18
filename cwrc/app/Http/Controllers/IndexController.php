@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use EasyRdf\Sparql\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class IndexController extends Controller {
 	
@@ -38,12 +39,18 @@ class IndexController extends Controller {
 
 		$contentType = $request->header('content-type', False);
 
+		if ($request->isMethod('post')) {
+			$query = $request->input('query');
+			return $this->performQuery($query);
+		}
+
+
 		if ($contentType == "application/sparql-query") {
 			$query = $request->input('query', $request->getContent());
 			return $this->performQuery($query);
 		}
 
-		return view('sparql');
+		return view('sparql', ['endpoint' => URL::current()]);
 
 	}
 
