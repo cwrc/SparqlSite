@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use EasyRdf\Sparql\Client;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller {
 	
@@ -33,11 +34,49 @@ class IndexController extends Controller {
 	}
 
 
-	public function sparql() {
+	public function sparql(Request $request) {
+
+		$contentType = $request->header('content-type', False);
+
+		if ($contentType == "application/sparql-query") {
+			$query = $request->input('query', $request->getContent());
+			return $this->performQuery($query);
+		}
 
 		return view('sparql');
 
 	}
+
+	public function curlInit($payload, $method="application/sparql-query") {
+
+		$req = curl_init();
+		$url = env('SPARQL_ENDPOINT');
+
+		curl_setopt($req, CURLOPT_URL, $url);
+		curl_setopt($req, CURLOPT_POST, true);
+		curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($req, CURLOPT_HTTPHEADER, [
+		    "Content-Type:$method",
+		    "Accept:application/json"
+		]);
+		curl_setopt($req, CURLOPT_POSTFIELDS, $payload);
+
+		return $req;
+
+	}
+
+	public function performQuery($query) {
+
+		$curlReq = $this->curlInit($query);
+
+		$result = curl_exec($curlReq);
+
+
+
+		return response()->json(json_decode($result));
+
+	}
+
 
 
 }

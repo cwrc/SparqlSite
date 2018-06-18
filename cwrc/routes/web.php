@@ -14,4 +14,6 @@
 Route::get('/', 'IndexController@index');
 
 
-Route::get('sparql', 'IndexController@sparql');
+Route::match(['get', 'post'], 'sparql', 'IndexController@sparql');
+
+
