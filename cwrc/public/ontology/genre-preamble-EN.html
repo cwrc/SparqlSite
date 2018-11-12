@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html 
+  xmlns="http://www.w3.org/1999/xhtml"
+  xml:lang="en"
+> 
+
+  <head>
+    <title>CWRC Literary Genre Ontology Specification - 0.3</title>
+    <link rel="mvcb:generatorAgent" type="application/rdf+xml" title="DOAP" href="https://raw.githubusercontent.com/muninn/ontology-tools/master/rdf/voidDescription.rdf#specgenMarkII" />
+    <meta http-equiv="content-type" content="text/xhtml+xml; charset=utf-8" />
+    
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    
+    <link href="css/cwrc.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="css/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="css/favicon.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">
+        <img src="http://sparql.cwrc.ca/images/cwrclogo-vert-white.png" height="30" class="align-top" alt="CWRC Logo"/> CWRC Ontologies</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sparql">SPARQL</a></li>
+          <li class="nav-item"><a class="nav-link active" href="genre-preamble-EN.html">Preamble</a></li>
+          <li class="nav-item"><a class="nav-link" href="genre.html">Specification <span class="sr-only">(current)</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="our-team-EN.html">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/cwrc/ontology">Github</a></li>
+        </ul>
+        <span class="navbar-text">The Literary Genre Ontology of the Canadian Writing Research Collaboratory</span>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-xl-2 col-lg-3 col-md-12 d-none d-lg-block bg-light sidebar">
+          <div class="sidebar-sticky">
+
+            <div class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Table of Contents</span>
+              <a class="d-flex align-items-center text-muted" href="#"></a>
+              <div id="toc">
+                <!-- Table of Contents -->
+              </div>
+            </div>
+          </div>
+        </nav>
+
+
+    <main role="main" class="col-xl-10 col-lg-9 col-md-12 ml-sm-auto pt-3 px-4" data-spy="scroll" data-target="#toc">
+
+    <hr />
+    <h1>CWRC Literary Genre Ontology Preamble</h1>
+
+    <h2 id="abstract">Abstract</h2>
+    <p>The CWRC Literary Genre Ontology is the ontology used by the Canadian Writing Research Collaboratory (<a href="http://www.cwrc.ca/en">cwrc.ca</a>) to assign Literary Genres to different documents.</p>
+
+     <h2 id="introduction">1. Introduction</h2>
+     
+     <p>This is a linked data representation of the genre vocabulary of the Canadian Writing Research Collaboratory (CWRC), an extension of the genre vocabulary of the Orlando Project. It includes literary genres associated with the literary tradition in English, broadly conceived, as well as related genres that often interact with literature or that are frequently subjected to literary analysis. We welcome suggestions of additions and improvements from related projects wishing to use the vocabulary.</p>
+     
+     <h2 id="background">2. Background</h2>
+     <p>Genre, Carolyn R.  Miller contends in an influential article, does
+     not inhere in “substance or form of discourse” but must rather be
+     conceived of in terms of situationally-specific rhetorical action,
+     although her definition is more complicated than this brief
+     articulation would suggest, since she argues that “action encompasses
+     both substance and form” (151,152).</p> 
+     
+     <p>Two primary types of action are associated with genre.  Miller addresses how particular speech acts
+     or instances of discourse, that is, texts in a broad sense, come
+     themselves to embody generic features; these, she argues, emerge from
+     rhetorical situations which are social constructs by which private
+     intentions are translated into socially recognizable and interpretable
+     discursive acts (Miller 1984).  But there is also the act of applying a
+     generic label to a text, another kind of discursive act that operates
+     in a wide range of contexts for different purposes.  Generic
+     categorization is foundational to literary studies, organizing both
+     primary and secondary materials, defining specializations and literary
+     movements, and playing a major role in the organization and
+     articulation of literary theory, criticism, and history.  As a major
+     feature of library classification systems, genre labeling serves
+     research across the disciplines.  It organizes bookstores and
+     publishers’ lists, and is used by readers to share and discuss their
+     tastes in texts.</p> 
+     
+     <p>Within these wide-ranging contexts, methods of
+     categorizing specific texts by genre fall into a spectrum ranging from
+     the application by professional cataloguers of tightly controlled
+     authoritative vocabularies produced by “trusted sources” (Harper),
+     though to entirely folksonomic categories devised ad hoc by users of
+     online systems--what Clay Shirky has described as “a radical break with
+     previous categorization strategies, rather than an extension of them.”
+     Numerous studies have indicated that while the terms deployed in these
+     various contexts may overlap, they are not consistently applied
+       (Lester; Lu; Rolla).</p>  
+     <p>This is the understanding of genre that informs this ontology. It does not claim to have arrived at a definitive taxonomy of literary forms, and considers such a taxonomy to be impossible. Rather, it represents a pragmatic approach to literary genres, very broadly conceived, as they have emerged from a scholary history of women's writing, and recognizes that other languages and approaches will emerge from other contexts. It recognizes that in a Linked Open Data (LOD) environment various approaches to genre will intersect, collide, and otherwise interact, and welcomes the prospect of ongoing expansion, revision, and linking of this ontology to other vocabularies, as the Canadian Writing Research Collaboratory continues to grow in conversation with the LOD community.</p>
+     
+     <h2 id="datasources">3. Data sources</h2>
+     
+     <p>The list of genres used within this ontology is based on
+     the genres originally listed by the Orlando Project. The list is
+     tightly coupled to the project's original objectives but is
+     substantive.</p>
+     <p>As the original Orlando project did not post definitions or
+     descriptions of the genres it used, these had to be created for this
+     ontology. Whenever possible, these were adapted from the linked open
+     data sets of DBpedia/Wikipedia, the Getty Art &amp; Architecture Thesaurus, or from the <i><a href="http://web.cn.edu/kwheeler/lit_terms.html">Literary Terms and
+     Definitions</a></i> webpage of  
+     Dr. L. Kip Wheeler. The indebtedness of the description is done using
+     the <a href="https://www.w3.org/TR/prov-o/">provenance ontology</a>, inline html citations and within
+     &lt;rdfs:comment&gt;
+     tags.</p> 
+     
+     <h2 id="taxonomy">4. Taxonomy construction</h2>
+       <p>The Literary Genre ontology contains a taxonomy of literary genres based on a
+       <a href="https://www.w3.org/2004/02/skos/">SKOS</a> approach. This
+       provides limited transitive narrower/broader definitions that can be used
+       to search for relevant creative works using the taxonomy. The
+       taxonomical tree is built on an ad-hoc topic relevance standard meant
+       for document retrieval and that may not be suited to all
+       applications. One distinctive feature of the ontology is the use of adjectival terms such as &apos;philosophical&apos; or &apos;detective&apos; to denote a particularly type of text. Such terms can be employed in conjunction with genres that relate more to form, such as &apos;poem&apos; or &apos;novel&apos;, so as to denote, for instance, &apos;feminist novel&apos;.</p>
+       <p><a href="figures/genreTaxonomy-2018-09-30-EN.svg">The specific taxonomy is:</a></p>
+       <object type="image/svg+xml" id="genre-tax" data="figures/genreTaxonomy-2018-09-30-EN.svg"></object>  
+       
+     <h2 id="usingthisontology">5. Using this ontology</h2>
+
+     <p>This ontology was constructed to support the efforts of the CWRC
+     project while enabling its stand-alone use by outside projects. Genres
+     exist both as typed instances of the <a href="#Genre">&lt;genre:Genre&gt;</a> class and as
+     <a href="https://www.w3.org/2009/08/skos-reference/skos.html#Concept">&lt;skos:Concept&gt;</a>s
+     of a Genre <a href="https://www.w3.org/2009/08/skos-reference/skos.html#ConceptScheme">&lt;ConceptScheme&gt;</a>. Instances can be both accessed directly or
+     through the built in SKOS taxonomical properties. A provided property
+     <a href="genre.html#hasGenre">&lt;genre:hasGenre&gt;</a> with no <a href="https://www.w3.org/TR/owl-ref/#domain-def">&lt;rdfs:domain&gt;</a>
+     permits the easy assignment of a genre to a work without committing to
+     a specific type of creative work.</p>
+      <p>This ontology can be paired with the <a href="http://sparql.cwrc.ca/">CWRC ontology</a>, though it is certainly not required. The focus of the CWRC ontology is on &quot;describing and relating aspects
+      of literary studies and literary history, with a strong emphasis on gender and intersectional analysis indebted to its roots in The Orlando Project, a history of women’s writing in the British Isles.&quot; Given the CWRC ontology's complexity and specificity, we have decided to split it off from the genre ontology so that users may reap the joys of having a taxonomy of genre at their fingertips without having to import some of CWRC's more contentious ontological assertions (eg. cultural formation) wholesale. We do, however, hope users will engage with both ontologies.</p>
+
+    <h2 id="notesSKOS">6. Genre Ontology Design Rules</h2>
+    <ol>
+    <li>Definitions in French, English (and other serendipitously available languages) are never word for word translations and are definitions in their own right.</li>
+    </ol>
+    
+    <h2 id="conclusion">7. Conclusion and Future Work</h2>
+    <p>
+    This ontology should be considered stable in nature with occasional
+    additions and refinements being made from time to time. 
+    It will continue to be developed as we
+    discover the implications of a multilingual ontology dedicated to literary
+    genres.</p>
+    <h2 id="version_history">8. Version History</h2>
+
+    <ul>
+    <li><p>0.1 - Ontology separated off from main cwrc ontology.</p></li>
+    <li><p>0.2 - Definitions and translations added.</p></li>
+    <li><p>0.3 - Deprecating of all genre instances and new uris, and instances being typed as Literary Genre.</p></li>
+    </ul>
+    
+    <h2 id="bibliography">9. Bibliography</h2>    
+<div class= "bibliography">
+<div class="citation" id="cwrc:4c227091-6bf0-4325-b846-9733fae19e61">
+<div class="csl-entry">Baldick, C. <span style="font-style: italic;">The Oxford Dictionary Of Literary Terms</span>. no date. 4th ed., Oxford University Press, 2015.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:4c227091-6bf0-4325-b846-9733fae19e61">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:9ee53c63-e387-4fc0-ad17-df5a84dddb4e">
+<div class="csl-entry">Briet, S. <span style="font-style: italic;">Qu'est-Ce Que La Documentation?</span>. no date. Éditions Documentaires Industrielles et Techniques, 1951.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:9ee53c63-e387-4fc0-ad17-df5a84dddb4e">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:2f09376c-f784-4a46-9f04-5a21aa311f27">
+<div class="csl-entry">Cuddon, J. A. <span style="font-style: italic;">The Penguin Dictionary Of Literary Terms And Literary Theory</span>. no date. Edited by C. E. Preston, 4th ed., Penguin Books, 1999.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:2f09376c-f784-4a46-9f04-5a21aa311f27">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:727d97bc-af78-4122-94be-aa78b2e97d5a">
+<div class="csl-entry"><span style="font-style: italic;">Dbpedia</span>. <span style="font-style: italic;">Dbpedia</span>. no date. DBpedia, 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:727d97bc-af78-4122-94be-aa78b2e97d5a">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:c1583789-0dad-41d3-8a42-94d7a8e6d451">
+<div class="csl-entry"><span style="font-style: italic;">Dbpedia</span>. <span style="font-style: italic;">Dbpedia</span>. no date. no date.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:c1583789-0dad-41d3-8a42-94d7a8e6d451">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:7ff0c640-f273-46f5-be8d-e50aa27dce59">
+<div class="csl-entry"><span style="font-style: italic;">Encyclopædia Britannica</span>. <span style="font-style: italic;">Encyclopædia Britannica</span>. no date. Encyclopædia Britannica, Inc., 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:7ff0c640-f273-46f5-be8d-e50aa27dce59">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:076686ab-eab5-4dcf-a6c0-4949d23feb5c">
+<div class="csl-entry">Foster, J. W. <span style="font-style: italic;">The Cambridge Companion To The Irish Novel</span>. no date. Cambridge University Press, 2006.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:076686ab-eab5-4dcf-a6c0-4949d23feb5c">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:db2f8571-a773-4068-a35f-34262950bb8f">
+<div class="csl-entry"><span style="font-style: italic;">Getty Art And Architecture Thesaurus</span>. <span style="font-style: italic;">Getty Art And Architecture Thesaurus</span>. no date. The J. Paul Getty Trust, 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:db2f8571-a773-4068-a35f-34262950bb8f">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:3f364bc0-ae92-45a1-8716-eaaee1451e91">
+<div class="csl-entry">Gruninger, M., and M.  Fox. <span style="font-style: italic;">Methodology For The Design And Evaluation Of Ontologies</span>. no date. University of Toronto, 1995Apr .[<a href="https://beta.cwrc.ca/islandora/object/cwrc:3f364bc0-ae92-45a1-8716-eaaee1451e91">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:13d76949-c3ea-44f9-82c7-4bb58be631f1">
+<div class="csl-entry">Harper, C., and B.  Tillett. “Library Of Congress Controlled Vocabularies And Their Application To The Semantic Web”. no date. <span style="font-style: italic;">Cataloging &amp; Classification Quarterly</span>, 2007.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:13d76949-c3ea-44f9-82c7-4bb58be631f1">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:fd6905bf-57dd-4532-9d29-ab4bf0024c1c">
+<div class="csl-entry"><span style="font-style: italic;">Ifla Study Group On The Functional Requirements For Bibliographic Records</span>. <span style="font-style: italic;">Ifla Study Group On The Functional Requirements For Bibliographic Records</span>. no date. K.G. Saur Verlag, 1998.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:fd6905bf-57dd-4532-9d29-ab4bf0024c1c">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:509015ff-7641-473e-94c5-688e06952bb7">
+<div class="csl-entry"><span style="font-style: italic;">L. K. Wheeler Literary Terms</span>. <span style="font-style: italic;">L. K. Wheeler Literary Terms</span>. no date. 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:509015ff-7641-473e-94c5-688e06952bb7">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:1416a23f-22c3-464e-bd34-d8ba6c435dc6">
+<div class="csl-entry">Lester, M. <span style="font-style: italic;">Coincidence Of User Vocabulary And Library Of Congress Subject Headings: Experiments To Improve Subject Access In Academic Libra</span>. no date. no date.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:1416a23f-22c3-464e-bd34-d8ba6c435dc6">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:c8e2ec75-28a0-41ad-a8a8-1c036f2ce6fa">
+<div class="csl-entry">Lu, C., et al. “User Tags Versus Expert-Assigned Subject Terms: A Comparison Of Librarything Tags And Library Of Congress Subject Headings.”. no date. <span style="font-style: italic;">Journal Of Information Science</span>, 2010Nov. .[<a href="https://beta.cwrc.ca/islandora/object/cwrc:c8e2ec75-28a0-41ad-a8a8-1c036f2ce6fa">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:93fc3195-0bd5-4161-a123-0352d96c42ab">
+<div class="csl-entry">MazellaMazella, D. D. <span style="font-style: italic;">The Making Of Modern Cynicism</span>. no date. University of Virginia Press, 2007.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:93fc3195-0bd5-4161-a123-0352d96c42ab">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:0a58baf2-e7d5-47d7-9853-c8140dbbfeed">
+<div class="csl-entry"><span style="font-style: italic;">Merriam-Webster</span>. <span style="font-style: italic;">Merriam-Webster</span>. no date. Merriam-Webster, Incorporated, 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:0a58baf2-e7d5-47d7-9853-c8140dbbfeed">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:01be93bb-5c15-4a8c-9bf7-43f42f77047e">
+<div class="csl-entry">Michelson, D. “Irreconcilable Differences? Name Authority Control And Humanities Scholarship”. no date. <span style="font-style: italic;">Hanging Together</span>, 2013Mar. .[<a href="https://beta.cwrc.ca/islandora/object/cwrc:01be93bb-5c15-4a8c-9bf7-43f42f77047e">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:ce03c4db-c840-478c-a656-50f59f398949">
+<div class="csl-entry">Miller, C. “Genre As Social Action”. no date. <span style="font-style: italic;">Quarterly Journal Of Speech</span>, 2009June .[<a href="https://beta.cwrc.ca/islandora/object/cwrc:ce03c4db-c840-478c-a656-50f59f398949">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:063341b0-632e-45f7-909a-707a7452d654">
+<div class="csl-entry">Ranganathan, S. R. <span style="font-style: italic;">Prolegomena To Library Classification</span>. no date. Asia Publishing House (New York), 1967.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:063341b0-632e-45f7-909a-707a7452d654">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:317f4130-1e38-4671-872a-a487f5e939c1">
+<div class="csl-entry">Richard, K., and P.  Gandel. “The Tower, The Cloud, And Posterity.”. no date. <span style="font-style: italic;">The Tower And The Cloud</span>, 2008.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:317f4130-1e38-4671-872a-a487f5e939c1">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:8bf15f06-bc5f-4619-a374-637bf09aec78">
+<div class="csl-entry">Stevenson, A. <span style="font-style: italic;">The Oxford Dictionary Of English</span>. no date. 3rd ed., Oxford University Press, 2015.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:8bf15f06-bc5f-4619-a374-637bf09aec78">link</a>]</div>
+</div>
+<div class="citation" id="cwrc:6384921c-fd10-49fa-9828-b20bb55c0fd0">
+<div class="csl-entry">“Advertising Copy”. “Advertising Copy”. no date. <span style="font-style: italic;">Business Dictionary</span>, WebFinance Inc., 2017.[<a href="https://beta.cwrc.ca/islandora/object/cwrc:6384921c-fd10-49fa-9828-b20bb55c0fd0">link</a>]</div>
+</div>
+</div>
+
+
+      </main>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+  <script src="js/toc.js"></script>
+  <script src="js/svg-pan-zoom.min.js"></script>
+
+  <script>
+
+      window.onload = function() {
+      var options = {
+          selector: 'h2, h3, h4',
+          scope: 'main'
+      };
+
+      var container = document.querySelector('#toc');
+      var toc = initTOC(options);
+      container.appendChild(toc);
+        // Expose variable for testing purposes
+
+        window.panZoomG = svgPanZoom('#genre-tax', {
+          zoomEnabled: true,
+          minZoom: 1,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true
+        });
+      };
+
+  </script>
+  </body>
+
+</html>

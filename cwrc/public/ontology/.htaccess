@@ -1,0 +1,30 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    Header set Access-Control-Allow-Origin *
+#    Header unset Content-Security-Policy
+#    Header set Content-Security-Policy "default-src 'self' connect-src 'self'"
+#    Header unset X-Content-Security-Policy
+#    Header add X-Content-Security-Policy "default-src 'self'"
+#    Header unset X-WebKit-CSP
+#    Header add X-WebKit-CSP "default-src 'self'"
+
+	  RewriteEngine on
+          RewriteCond %{HTTP_ACCEPT} text/html [OR]
+          RewriteCond %{HTTP_ACCEPT} application/xhtml\+xml
+          RewriteRule ^[!/.]*([A-Za-z0-9-]+)/?$ /ontology/$1.html [R=303,L]
+          RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+          RewriteRule ^[!/.]*([A-Za-z0-9-]+)/?$ /ontology/$1.owl [R=303,L]
+          RewriteCond %{HTTP_ACCEPT} text/x-turtle [OR]
+          RewriteCond %{HTTP_ACCEPT} application/x-turtle [OR]
+          RewriteRule ^[!/.]*([A-Za-z0-9-]+)/?$ /ontology/$1.ttl [R=303,L]
+          RewriteCond %{HTTP_ACCEPT} application/n-triples [OR]
+          RewriteCond %{HTTP_ACCEPT} text/n-triples [OR]
+          RewriteRule ^[!/.]*([A-Za-z0-9-]+)/?$ /ontology/$1.nt [R=303,L]
+#         Default
+          RewriteRule ^[!/.]*([A-Za-z0-9-]+)/?$ /ontology/$1.owl [R=303,L]
+
+
+</IfModule>

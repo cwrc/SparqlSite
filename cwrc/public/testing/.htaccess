@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    Header set Access-Control-Allow-Origin *
+#    Header unset Content-Security-Policy
+#    Header set Content-Security-Policy "default-src 'self' connect-src 'self'"
+#    Header unset X-Content-Security-Policy
+#    Header add X-Content-Security-Policy "default-src 'self'"
+#    Header unset X-WebKit-CSP
+#    Header add X-WebKit-CSP "default-src 'self'"
+
+</IfModule>

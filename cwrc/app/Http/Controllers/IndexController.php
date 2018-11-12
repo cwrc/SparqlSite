@@ -26,7 +26,7 @@ class IndexController extends Controller {
    		OPTIONAL {?uri <http://purl.org/vocab/vann/preferredNamespacePrefix> ?prefix . }
   		filter (lang(?description) = 'en')
   		filter (lang(?name) = 'en')
-		}  }"
+		}  } ORDER BY ?prefix"
     );
 
 
@@ -38,23 +38,23 @@ class IndexController extends Controller {
 	public function sparql(Request $request) {
 
 		$contentType = $request->header('content-type', False);
-
-		if ($request->isMethod('post')) {
+		$accept = $request->header('accept', 'application/json');
+		if ($request->isMethod('post') && $contentType != "application/sparql-query") {
 			$query = $request->input('query');
-			return $this->performQuery($query);
+			return $this->performQuery($query, $accept);
 		}
 
 
 		if ($contentType == "application/sparql-query") {
 			$query = $request->input('query', $request->getContent());
-			return $this->performQuery($query);
+			return $this->performQuery($query, $accept);
 		}
 
 		return view('sparql', ['endpoint' => URL::current()]);
 
 	}
 
-	public function curlInit($payload, $method="application/sparql-query") {
+	public function curlInit($payload, $accept, $method="application/sparql-query") {
 
 		$req = curl_init();
 		$url = env('SPARQL_ENDPOINT');
@@ -64,7 +64,7 @@ class IndexController extends Controller {
 		curl_setopt($req, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($req, CURLOPT_HTTPHEADER, [
 		    "Content-Type:$method",
-		    "Accept:application/json"
+		    "Accept:$accept"
 		]);
 		curl_setopt($req, CURLOPT_POSTFIELDS, $payload);
 
@@ -72,13 +72,13 @@ class IndexController extends Controller {
 
 	}
 
-	public function performQuery($query) {
+	public function performQuery($query, $accept) {
 
-		$curlReq = $this->curlInit($query);
+		$curlReq = $this->curlInit($query, $accept);
 
 		$result = curl_exec($curlReq);
 
-
+		return response($result);
 
 		return response()->json(json_decode($result));
 

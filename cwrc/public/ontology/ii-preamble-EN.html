@@ -1,0 +1,177 @@
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>II Ontology Preamble - 1.1</title>
+    <meta charset="utf-8"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link href="css/cwrc.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="css/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="css/favicon.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">
+        <img src="http://sparql.cwrc.ca/images/cwrclogo-vert-white.png" height="30" class="align-top" alt="CWRC Logo"/> CWRC Ontologies</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/sparql">SPARQL</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Preamble</a> <span class="sr-only">(current)</span></li>
+          <li class="nav-item"><a class="nav-link" href="ii.html">Specification</a></li>
+          <li class="nav-item"><a class="nav-link" href="our-team-EN.html">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://github.com/cwrc/ontology">Github</a></li>
+        </ul>
+        <span class="navbar-text">The Illnesses and Injuries Ontology</span>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-xl-2 col-lg-3 col-md-12 d-none d-lg-block bg-light sidebar">
+          <div class="sidebar-sticky">
+
+            <div class="sidebar-heading justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+              <span>Table of Contents</span>
+              <a class="d-flex align-items-center text-muted" href="#"></a>
+              <div id="toc">
+                <!-- Table of Contents -->
+              </div>
+            </div>
+          </div>
+        </nav>
+        <main role="main" class="col-xl-10 col-lg-9 col-md-12 ml-sm-auto pt-3 px-4" data-spy="scroll" data-target="#toc">
+
+        <h1>CWRC II Ontology Preamble</h1>
+        <hr/>
+        <h2 id="abstract">Abstract</h2>
+        <p>The II (Illness and Injury) Ontology is the ontology used by the Canadian Writing Research Collaboratory (<a href="http://www.cwrc.ca">cwrc.ca</a>) to assign names of illnesses and injuries to cause of death and health issues triples. 
+</p>
+
+
+        <h2 id="introduction">1. Introduction</h2>
+        <p> This list of Illness and Injury (Morbidity and Mortality) classifications is an abbreviated version of the World Health Organization&apos;s (WHO) Startup Mortality List (ICD-10-SMoL).  ICD-10-SMoL is the WHO&apos;s application of ICD-10 for low-resource settings initial cause of death collection.  It was developed to add structure to the designations for cause of death and health issues in biographical information.</p>
+
+        <h2 id="background">2. Background</h2>
+<p>ICD-10-SMoL was chosen because it is a simplified version of the ICD-10.  ICD (International Classification of Diseases) &quot;is the foundation for the identification of health trends and statistics globally, and the international standard for reporting diseases and health conditions. It is the diagnostic classification standard for all clinical and research purposes. ICD defines the universe of diseases, disorders, injuries and other related health conditions&quot; [<a href="http://www.who.int/classifications/icd/en/">http://www.who.int/classifications/icd/en/</a>].</p>
+
+<p>Version 1.0 of this ontology was compiled for the CWRC ontology project and reflects the need to have causes of death and health issues organized in a way to allow for analysis of cultural data.  A simplified list was deemed sufficient since the domain under study (cultural documents) will not have detailed medical information with regards to cause of death or health issues.  But instead of accepting a list of general usage terms for causes of death or health issues that appear in some sources (e.g. Wikipedia, Wikidata, etc.), a standardized, medical classification was selected so that it could be of use for future analysis regarding questions involving the intersection of health and culture.</p>
+
+<p>ICD-10-SMoL was chosen since it was the latest version of this list (June, 2018).  A stable version of ICD-11 was to be available in June 2018 but there was no ICD-11-SMoL available at this time.  To obtain the ICD10-SMoL: <a href="http://www.who.int/healthinfo/civil_registration/ICD_10_SMoL.pdf?ua=1">http://www.who.int/healthinfo/civil_registration/ICD_10_SMoL.pdf?ua=1</a> </p>
+
+        <h2 id="status">3. About this Document</h2>
+        <p>This document is a human-readable version of the ontology that cannot document all of its data structures. The ontology itself should be the primary source for understanding how the ontology works. </p>
+        <p>The intended audience of this document is the scholar that wishes to understand how the ontology tackles concrete data recording problems and the linked open data practitioner that intends to make use of this ontology. </p>
+
+        <h2 id="status_ontology">4. Status of this Dynamic Ontology</h2>
+        <p>This document and the associated ontology will grow iteratively with modifications made over time as data is progressively translated and further ontological concerns are identified. Continuity is ensured using the OWL ontology annotations for ontological compatibility and for deprecated classes and properties. Deprecated ontology terms remain present but are marked as such. </p><p>The ontology is understood to be a living document that makes no claims to completeness. Instances in particular have been derived from particular datasets and will be expanded progressively over time. </p><p>We welcome suggestions for new classes, properties, and predicates from those wishing to use the ontology for their own datasets, as well as suggestions related to the complexity of vocabulary associated with existing terms. Please submit suggestions via an issue or a pull request to the <a href="https://github.com/cwrc/ontology">CWRC Ontology code repository</a>.</p>
+
+        <h2 id="data_sources">5. Data Sources</h2>
+        <ul>
+           <li> <a href="http://apps.who.int/classifications/icd10/browse/2010/en#/">ICD-10</a> [<a href="http://bioportal.bioontology.org/ontologies/ICD10/?p=summary">Ontology</a>]
+           <li> <a href="http://www.who.int/healthinfo/civil_registration/ICD_10_SMoL.pdf?ua=1">SMoL</a>
+           <li> <a href="https://www.thornber.net/medicine/html/medgloss.html">Glossary of Medical Terms Used in the 18th and 19th Centuries</a>
+        </ul>
+
+        <h2 id="goals">6. Basic Ontological Goals</h2>
+
+        <h3 id="linkages">a. Linkages to External Ontologies</h3>
+        <p>We employ a number of strategies for linking to other ontologies. Our architecture does not typically import other ontologies wholesale, but relates to large vocabularies in defined ways.</p>
+        <p> We adopt external namespaces and associated classes and terms wherever possible when they are in widespread use and their vocabularies are broadly compatible with ours, as in the case of the <a href="http://xmlns.com/foaf/spec/">FOAF</a> vocabulary. 
+If an external ontology term aligns semantically with ours, then we use OWL- or SKOS-based relationships such as <code>&lt;owl:equivalentClass&gt;</code>, <code>&lt;skos:narrower&gt;</code> or <code>&lt;skos:broader&gt;</code>. If an external term's definition or use is not commensurate with a term in the CWRC ontology but its application in external datasets is such that it will be useful nevertheless to link those terms to ours, then the <a href="cwrc.html#hasFunctionalRelation">has functional relation</a> predicate is employed to indicate that the relationship is specified semantically but may be leveraged for processing.</p>
+        <p>At the top level, the II ontology makes use of the following well known ontologies:
+          <ol>
+            <li>The <a href="http://xmlns.com/foaf/spec/">FOAF</a> ontology for the representation of people and organizations.</li>
+            <li>The <a href="https://www.w3.org/TR/annotation-model/">Web Open Annotation</a> data model is used to link the original Orlando text to specific <a href="cwrc.html#Context">Contexts</a>.</li>
+            <li>The <a href="https://www.w3.org/TR/skos-reference/">SKOS</a> vocabulary is used to represent taxonomical relationships and to fully document ontology terms.</li>
+            <li>Some <a href="http://dublincore.org/documents/dcmi-terms/">Dublin Core</a> vocabulary terms are used for well known documentation tags.</li>
+            <li>The <a href="http://sparql.cwrc.ca/ontologies/cwrc">CWRC</a> ontology supplies relationships unique to CWRC.</li>
+          </ol>
+        </p>
+
+        <h3 id="provenance">b. Provenance and Contexts</h3>
+        <p> The <a href="https://www.w3.org/TR/annotation-model/">Web Open Annotation</a> data model is used to link the original Orlando text to specific <a href="cwrc.html#Context">Contexts</a> for cause of death and health issues.  More documentation to come about the way OA was used in this and other CWRC ontologies.</p>
+
+
+        <h2 id="notesSKOS">7. CWRC Ontology Design Rules</h2>
+        <p>Beyond the formalism of <a href="https://www.w3.org/TR/owl-primer/">The OWL 2 Web Ontology Language</a>, the CWRC ontology follows the following design rules and styles:</p>
+        <ul>
+          <li>To be added...
+        </ul>
+
+
+        <h2 id="notesSKOSOWL">8. Notes on SKOS and OWL</h2>
+        <p>SKOS (Simple Knowledge Organization System) enjoys widespread popularity in the semantic web community as it provides simple terms for taxonomies without requiring reasoner support. Whenever appropriate, SKOS terms are inserted within this ontology to link terms to each other. However, since these terms are not ontologically powered, their scalability is limited since each additional layer of terms within a taxonomy requires another database query.</p>
+        </p>
+
+
+        <h2 id="conclusion">9. Conclusion and Future Work</h2>
+        <p>This is a draft ontology that is very much in progress. It will continue to be developed, expanded, and revised as we discover the implications of how we have structured the ontology through using it to extract and explore our data, as fresh data and use cases necessitate expansion or refinement, and as new needs, understandings, and debates arise. </p>
+
+
+        <h2 id="version_history">10. Version History</h2>
+        <ul>
+          <li>1.0 - Initial public release.  Most of the terms from ICD-10 and SMoL that were deemed appropriate appear in this version but changes to these terms (additions, deletions, modifications) may occur in the future.  A new class (Women's Health) appears but is not populated with instances yet.  This was added in anticipation of the needs for documenting health issues as opposed to cause of death.</p></li>
+        </ul>
+
+        <h2 id="bibliography">11. Bibliography</h2>
+        <ul style="list-style-type:none">
+           <li><i>World Health Organization</i>.  <i>World Health Organization: Classifications</i>. [<a href="http://www.who.int/classifications/icd/en/">Link</a>] 
+           <br> <br>
+           <li><i>World Health Organization</i>.  <i>WHO Application of ICD-10 for low-resource settings initial cause of death collection: The Startup Mortality List (ICD-10-SMoL) V2.1</i>. [<a href="http://www.who.int/healthinfo/civil_registration/ICD_10_SMoL.pdf?ua=1">Link</a>] 
+        </ul>
+
+
+      </main>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh3U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+
+  <script src="js/toc.js"></script>
+  <script src="js/svg-pan-zoom.min.js"></script>
+  <script>
+      window.onload = function() {
+      var options = {
+          selector: 'h2, h3, h4, h5',
+          scope: 'main'
+      };
+      var container = document.querySelector('#toc');
+      var toc = initTOC(options);
+      container.appendChild(toc);
+        // Expose variable for testing purposes
+        window.panZoomPA = svgPanZoom('#pa-tax', {
+          zoomEnabled: true,
+          minZoom: 1,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true
+        });
+        window.panZoomR = svgPanZoom('#religion-tax', {
+          zoomEnabled: true,
+          minZoom: 1,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true
+        });
+        window.panZoomG = svgPanZoom('#genre-tax', {
+          zoomEnabled: true,
+          minZoom: 1,
+          controlIconsEnabled: true,
+          fit: true,
+          center: true
+        });
+      };
+  </script>
+  </body>
+</html>
